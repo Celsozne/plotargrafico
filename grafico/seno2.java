@@ -3,7 +3,7 @@ package grafico;
 import java.awt.*;
 import javax.swing.*;
 
-public class seno2 extends JPanel {
+public class seno2 extends JPanel implements seno21 {
     int scale =200;
     int cycles;
     int points;
@@ -38,6 +38,18 @@ public class seno2 extends JPanel {
         }
     }
 
+    public void eixos(Graphics g) {
+       super.paintComponent(g);
+
+       // Desenha os eixos
+       g.drawLine(0, getHeight() / 2, getWidth(), getHeight() / 2);
+       g.drawLine(getWidth() / 2, 0, getWidth() / 2, getHeight());
+
+       // Marcas nos eixos
+       for (int i = -5; i <= 5; i++) {
+           g.drawString(String.valueOf(i), i * getWidth() / (5 - (-5)), getHeight() / 2 + 5);
+       }
+   }
     public static void main(String[] args) {
         JFrame.setDefaultLookAndFeelDecorated(true);
         JFrame frame = new JFrame("Seno");
