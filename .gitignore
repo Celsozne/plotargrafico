@@ -1,0 +1,3 @@
+# Cargo build artifacts
+/project/target/
+/logistic_map/target/
